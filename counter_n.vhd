@@ -4,19 +4,20 @@ USE IEEE.std_logic_unsigned.ALL;
 
 ENTITY counter_n IS
     GENERIC (
-        size : INTEGER
+        datawidth : INTEGER
     );
     PORT (
         clk, rst : IN STD_LOGIC;
         en : IN STD_LOGIC;
         ld : IN STD_LOGIC;
-        D : IN STD_LOGIC_VECTOR((size - 1) DOWNTO 0);
-        Q : OUT STD_LOGIC_VECTOR((size - 1) DOWNTO 0)
+        D : IN STD_LOGIC_VECTOR((datawidth - 1) DOWNTO 0);
+        Q : OUT STD_LOGIC_VECTOR((datawidth - 1) DOWNTO 0)
     );
 END counter_n;
 
 ARCHITECTURE rtl OF counter_n IS
-    SIGNAL preQ : STD_LOGIC_VECTOR((size - 1) DOWNTO 0);
+    SIGNAL preQ : STD_LOGIC_VECTOR((datawidth - 1) DOWNTO 0);
+    SIGNAL one : STD_LOGIC_VECTOR((datawidth - 1) DOWNTO 0) := (0 => '1', OTHERS => '0');
 BEGIN
     PROCESS (rst, clk)
     BEGIN
@@ -26,7 +27,7 @@ BEGIN
             IF ld = '1' THEN
                 preQ <= D;
             ELSIF en = '1' THEN
-                preQ <= preQ + "0001";
+                preQ <= preQ + one;
             END IF;
         END IF;
     END PROCESS; -- 

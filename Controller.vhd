@@ -9,7 +9,7 @@ ENTITY Controller IS
         start : IN STD_LOGIC;
         Zi : IN STD_LOGIC;
 
-        WE_A, WE_B, RE_A, RE_B : OUT STD_LOGIC;
+        RE_A, RE_B, LD_Addr_A, LD_Addr_B : OUT STD_LOGIC;
         WE_C, RE_C : OUT STD_LOGIC;
         dout_sel : OUT STD_LOGIC;
         LD_i : OUT STD_LOGIC;
@@ -24,6 +24,10 @@ ARCHITECTURE rtl OF Controller IS
 BEGIN
     Done <= '1' WHEN state = s8 OR state = s9 ELSE
         '0';
+    LD_Addr_A <= '1' WHEN state = s0 ELSE
+    '0';
+    LD_Addr_B <= '1' WHEN state = s0 ELSE
+    '0';
     dout_sel <= '1' WHEN state = s0 ELSE
         '0';
     WE_C <= '1' WHEN state = s0 OR state = s5 ELSE

@@ -5,25 +5,24 @@ USE IEEE.NUMERIC_STD.ALL;
 USE IEEE.std_logic_unsigned.ALL;
 
 ENTITY dpmem IS
+    GENERIC (
+        datawidth : INTEGER
+    );
     PORT (
-        RAM_ADDR : IN STD_LOGIC_VECTOR(3 DOWNTO 0); -- Address to write/read RAM
-        RAM_DATA_IN : IN STD_LOGIC_VECTOR(7 DOWNTO 0); -- Data to write into RAM
+        RAM_ADDR : IN STD_LOGIC_VECTOR((datawidth-1) DOWNTO 0); -- Address to write/read RAM
+        RAM_DATA_IN : IN STD_LOGIC_VECTOR((datawidth-1) DOWNTO 0); -- Data to write into RAM
         en_wr : IN STD_LOGIC; -- Write enable
         en_re : IN STD_LOGIC; -- 
         RAM_CLOCK : IN STD_LOGIC; -- Clock input for RAM
-        RAM_DATA_OUT : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) -- Data output of RAM
+        RAM_DATA_OUT : OUT STD_LOGIC_VECTOR((datawidth-1) DOWNTO 0) -- Data output of RAM
     );
 END dpmem;
 
 ARCHITECTURE rtl OF dpmem IS
-    -- Define the new type for the 128x8 RAM
-    TYPE RAM_ARRAY IS ARRAY (0 TO 15) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
+    TYPE RAM_ARRAY IS ARRAY (0 TO (2**16 - 1)) OF STD_LOGIC_VECTOR((datawidth - 1) DOWNTO 0);
 
     -- Initial values in the RAM
-    SIGNAL RAM : RAM_ARRAY := (
-        x"00", x"00", x"00", x"00", x"00", x"00", x"00", x"00", x"00", x"00", x"00", x"00", x"00", x"00", x"00", x"00"
-    );
-
+    SIGNAL RAM : RAM_ARRAY := (OTHERS => (OTHERS => '0')); -- Khởi tạo bộ nhớ với giá trị 0
 BEGIN
     PROCESS (RAM_CLOCK)
     BEGIN
