@@ -27,7 +27,8 @@ ARCHITECTURE rtl OF Matrix IS
     SIGNAL Zi : STD_LOGIC;
 BEGIN
     RE_C <= RE_C_control;
-    data_unit : datapath
+    
+    Datapath_unit : datapath
     GENERIC MAP(
         datawidth
     )
@@ -44,7 +45,7 @@ BEGIN
         data_out
     );
 
-    control_unit : Controller
+    Control_unit : Controller
     PORT MAP(
         CLK, Reset,
         start,

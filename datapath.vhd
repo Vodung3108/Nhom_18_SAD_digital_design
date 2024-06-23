@@ -34,23 +34,40 @@ ARCHITECTURE rtl OF datapath IS
     SIGNAL MC_out : STD_LOGIC_VECTOR((datawidth - 1) DOWNTO 0);
     SIGNAL matrix_size : STD_LOGIC_VECTOR((datawidth - 1) DOWNTO 0);
 BEGIN
-
-    Zi <= '0' WHEN i < matrix_size ELSE
+    -- Comparator of i and matrix_size
+    Zi <= '0' WHEN i < matrix_size ELSE 
         '1';
-    diff_A_B <= MA_out - MB_out;--diff a and b 
+
+    -- Subtractor A - B
+    diff_A_B <= MA_out - MB_out;
+
+    -- Opposite number of A - B (by two's complement)
     diff_A_B_bu_2 <= NOT(diff_A_B) + 1;
+
+    -- Comparator to check the difference is positive or negative
     diff_gt_zero <= '1' WHEN diff_A_B(datawidth - 1) > '0' ELSE
         '0';
+
+    -- Multiplexor for Absolute difference
     abs_diff <= diff_A_B WHEN diff_gt_zero = '0' ELSE
         diff_A_B_bu_2;
+
+    -- Multiplexor for SAD
     Data_C <= (others => '0') WHEN dout_sel = '1' ELSE (MC_out + abs_diff);
+
+    -- Multiplexor for address of matrix A
     addr_A <= i WHEN start = '1' ELSE
         Addr_A_in;
+
+    -- Multiplexor for address of matrix B
     addr_B <= i WHEN start = '1' ELSE
         Addr_B_in;
+
     addr_C <= i;
+
     data_out <= MC_out;
 
+    -- Register matrix size
     matrix_size_dff : dff
     GENERIC MAP(datawidth)
     PORT MAP(
@@ -60,6 +77,7 @@ BEGIN
         matrix_size
     );
 
+    -- Counter Address of matrix A
     cnt_Addr_A_in : counter_n
     GENERIC MAP(
         datawidth
@@ -71,6 +89,8 @@ BEGIN
         (others => '0'),
         Addr_A_in
     );
+
+    -- Counter Address of matrix A
     cnt_Addr_B_in : counter_n
     GENERIC MAP(
         datawidth
@@ -83,6 +103,7 @@ BEGIN
         Addr_B_in
     );
 
+    -- Counter Address of matrix SAD
     cnt_calc : counter_n
     GENERIC MAP(
         datawidth
@@ -95,6 +116,7 @@ BEGIN
         i
     );
 
+    -- Memory for Matrix A
     MA : dpmem
     GENERIC MAP(
         datawidth
@@ -108,6 +130,7 @@ BEGIN
         MA_out
     );
 
+    -- Memory for Matrix B
     MB : dpmem
     GENERIC MAP(
         datawidth
@@ -121,6 +144,7 @@ BEGIN
         MB_out
     );
 
+    -- Memory for Matrix SAD
     MC : dpmem
     GENERIC MAP(
         datawidth

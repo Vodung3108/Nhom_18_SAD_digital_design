@@ -5,13 +5,13 @@ USE IEEE.std_logic_unsigned.ALL;
 
 PACKAGE matrixlib IS
 
-    --counter
+    --Counter
     COMPONENT counter_n IS
         GENERIC (
             datawidth : INTEGER
         );
         PORT (
-            clk, rst : IN STD_LOGIC;
+            CLK, Reset : IN STD_LOGIC;
             en : IN STD_LOGIC;
             ld : IN STD_LOGIC;
             D : IN STD_LOGIC_VECTOR((datawidth - 1) DOWNTO 0);
@@ -19,22 +19,22 @@ PACKAGE matrixlib IS
         );
     END COMPONENT;
 
-    --dpmem
+    --Memory
     COMPONENT dpmem IS
         GENERIC (
             datawidth : INTEGER
         );
         PORT (
-            RAM_ADDR : IN STD_LOGIC_VECTOR((datawidth - 1) DOWNTO 0); -- Address to write/read RAM
-            RAM_DATA_IN : IN STD_LOGIC_VECTOR((datawidth - 1) DOWNTO 0); -- Data to write into RAM
-            en_wr : IN STD_LOGIC; -- Write enable
-            en_re : IN STD_LOGIC; -- 
-            RAM_CLOCK : IN STD_LOGIC; -- Clock input for RAM
-            RAM_DATA_OUT : OUT STD_LOGIC_VECTOR((datawidth - 1) DOWNTO 0) -- Data output of RAM
+            RAM_ADDR : IN STD_LOGIC_VECTOR((datawidth - 1) DOWNTO 0); 
+            RAM_DATA_IN : IN STD_LOGIC_VECTOR((datawidth - 1) DOWNTO 0); 
+            WE : IN STD_LOGIC; 
+            RE : IN STD_LOGIC; 
+            CLK : IN STD_LOGIC; 
+            RAM_DATA_OUT : OUT STD_LOGIC_VECTOR((datawidth - 1) DOWNTO 0) 
         );
     END COMPONENT;
 
-    --datapath
+    --Datapath
     COMPONENT datapath IS
         GENERIC (
             datawidth : INTEGER
@@ -55,7 +55,7 @@ PACKAGE matrixlib IS
         );
     END COMPONENT;
 
-    --controller
+    --Controller
     COMPONENT Controller IS
         PORT (
             CLK, Reset : IN STD_LOGIC;
@@ -70,7 +70,8 @@ PACKAGE matrixlib IS
             Done : OUT STD_LOGIC
         );
     END COMPONENT;
-    --
+
+    --Matrix
     COMPONENT Matrix IS
         GENERIC (
             datawidth : INTEGER := 16
@@ -86,10 +87,11 @@ PACKAGE matrixlib IS
         );
     END COMPONENT;
 
+    --Register
     COMPONENT dff IS
         GENERIC (DATA_WIDTH : INTEGER);
         PORT (
-            RST, CLK : IN STD_LOGIC;
+            Reset, CLK : IN STD_LOGIC;
             En : IN STD_LOGIC;
             D : IN STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
             Q : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0)

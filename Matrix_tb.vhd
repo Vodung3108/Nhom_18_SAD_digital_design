@@ -17,23 +17,23 @@ ARCHITECTURE rtl OF Matrix_tb IS
     SIGNAL data_out : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL RE_C : STD_LOGIC;
 BEGIN
-    clk_signal : PROCESS
+    Clock_signal : PROCESS
     BEGIN
         CLK <= '1';
         WAIT FOR 10 ns;
         CLK <= '0';
         WAIT FOR 10 ns;
-    END PROCESS; -- clk_signal
+    END PROCESS; -- Clock_signal
 
-    rst_sig : PROCESS
+    Reset_signal : PROCESS
     BEGIN
         Reset <= '1';
         WAIT FOR 50 ns;
         Reset <= '0';
         WAIT;
-    END PROCESS; -- rst_sig
+    END PROCESS; -- Reset_sig
 
-    Data_A_sig : PROCESS
+    Data_A_signal : PROCESS
     BEGIN
         WAIT FOR 100 ns;
         Data_A <= "1111111100000000";
@@ -53,8 +53,6 @@ BEGIN
         Data_A <= "0000000000001011";
         WAIT FOR 100 ns;
         Data_A <= "0000000000100000";
-        
-
         WAIT FOR 100 ns;
         Data_A <= "1111111100000000";
         WAIT FOR 100 ns;
@@ -73,7 +71,7 @@ BEGIN
 
     END PROCESS; -- Data_A_sig
 
-    Data_B_sig : PROCESS
+    Data_B_signal : PROCESS
     BEGIN
         WAIT FOR 100 ns;
         Data_B <= "0000000000001000";
@@ -93,8 +91,6 @@ BEGIN
         Data_B <= "0000000000000001";
         WAIT FOR 100 ns;
         Data_B <= "0000000000000000";
-
-
         WAIT FOR 100 ns;
         Data_B <= "0000000000001000";
         WAIT FOR 100 ns;
@@ -113,7 +109,7 @@ BEGIN
     END PROCESS; -- Data_B_sig
 
 
-    WE_A_sig : PROCESS
+    WE_A_signal : PROCESS
     BEGIN
         WE_A <= '0';
         WAIT FOR 100 ns;
@@ -162,7 +158,6 @@ BEGIN
         WAIT FOR 20 ns;
         WE_A <= '0';
         WAIT FOR 70 ns;
-
         WAIT FOR 10 ns;
         WE_A <= '1';
         WAIT FOR 20 ns;
@@ -250,7 +245,6 @@ BEGIN
         WAIT FOR 20 ns;
         WE_B <= '0';
         WAIT FOR 70 ns;
-
         WAIT FOR 10 ns;
         WE_B <= '1';
         WAIT FOR 20 ns;
@@ -289,7 +283,7 @@ BEGIN
         WAIT;
     END PROCESS; -- WE_B_sig
 
-    start_sig : PROCESS
+    start_signal : PROCESS
     BEGIN
         start <= '0';
         WAIT FOR 2500 ns;

@@ -7,7 +7,7 @@ ENTITY counter_n IS
         datawidth : INTEGER
     );
     PORT (
-        clk, rst : IN STD_LOGIC;
+        CLK, Reset : IN STD_LOGIC;
         en : IN STD_LOGIC;
         ld : IN STD_LOGIC;
         D : IN STD_LOGIC_VECTOR((datawidth - 1) DOWNTO 0);
@@ -19,18 +19,18 @@ ARCHITECTURE rtl OF counter_n IS
     SIGNAL preQ : STD_LOGIC_VECTOR((datawidth - 1) DOWNTO 0);
     SIGNAL one : STD_LOGIC_VECTOR((datawidth - 1) DOWNTO 0) := (0 => '1', OTHERS => '0');
 BEGIN
-    PROCESS (rst, clk)
+    PROCESS (CLK, Reset)
     BEGIN
-        IF (rst = '1') THEN
+        IF (Reset = '1') THEN
             preQ <= D;
-        ELSIF (clk'event AND clk = '1') THEN
+        ELSIF (CLK'event AND CLK = '1') THEN
             IF ld = '1' THEN
                 preQ <= D;
             ELSIF en = '1' THEN
                 preQ <= preQ + one;
             END IF;
         END IF;
-    END PROCESS; -- 
+    END PROCESS; 
     Q <= preQ;
 
 END ARCHITECTURE rtl;

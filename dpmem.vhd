@@ -1,7 +1,6 @@
--- Single-port RAM in VHDL
 LIBRARY IEEE;
-USE IEEE.STD_LOGIC_1164.ALL;
-USE IEEE.NUMERIC_STD.ALL;
+USE IEEE.std_logic_1164.ALL;
+USE IEEE.numeric_std.ALL;
 USE IEEE.std_logic_unsigned.ALL;
 
 ENTITY dpmem IS
@@ -9,12 +8,12 @@ ENTITY dpmem IS
         datawidth : INTEGER
     );
     PORT (
-        RAM_ADDR : IN STD_LOGIC_VECTOR((datawidth-1) DOWNTO 0); -- Address to write/read RAM
-        RAM_DATA_IN : IN STD_LOGIC_VECTOR((datawidth-1) DOWNTO 0); -- Data to write into RAM
-        en_wr : IN STD_LOGIC; -- Write enable
-        en_re : IN STD_LOGIC; -- 
-        RAM_CLOCK : IN STD_LOGIC; -- Clock input for RAM
-        RAM_DATA_OUT : OUT STD_LOGIC_VECTOR((datawidth-1) DOWNTO 0) -- Data output of RAM
+        RAM_ADDR : IN STD_LOGIC_VECTOR((datawidth-1) DOWNTO 0);
+        RAM_DATA_IN : IN STD_LOGIC_VECTOR((datawidth-1) DOWNTO 0); 
+        WE : IN STD_LOGIC; 
+        RE : IN STD_LOGIC; 
+        CLK : IN STD_LOGIC; 
+        RAM_DATA_OUT : OUT STD_LOGIC_VECTOR((datawidth-1) DOWNTO 0) 
     );
 END dpmem;
 
@@ -22,25 +21,26 @@ ARCHITECTURE rtl OF dpmem IS
     TYPE RAM_ARRAY IS ARRAY (0 TO (2**16 - 1)) OF STD_LOGIC_VECTOR((datawidth - 1) DOWNTO 0);
 
     -- Initial values in the RAM
-    SIGNAL RAM : RAM_ARRAY := (OTHERS => (OTHERS => '0')); -- Khởi tạo bộ nhớ với giá trị 0
+    SIGNAL RAM : RAM_ARRAY := (OTHERS => (OTHERS => '0'));
+
 BEGIN
-    PROCESS (RAM_CLOCK)
+    -- Write matrix data to RAM
+    PROCESS (CLK)
     BEGIN
-        IF rising_edge(RAM_CLOCK) THEN
-            IF en_wr = '1' THEN
-                -- When write enable = 1, write input data into RAM at the provided address
+        IF CLK'EVENT and CLK = '1' THEN
+            IF WE = '1' THEN
                 RAM(to_integer(unsigned(RAM_ADDR))) <= RAM_DATA_IN;
             END IF;
         END IF;
     END PROCESS;
 
-    PROCESS (RAM_CLOCK)
+    -- Read matrix data from RAM
+    PROCESS (CLK)
     BEGIN
-        IF rising_edge(RAM_CLOCK) THEN
-            IF en_re = '1' THEN
+        IF CLK'EVENT and CLK = '1' THEN
+            IF RE = '1' THEN
                 RAM_DATA_OUT <= RAM(to_integer(unsigned(RAM_ADDR)));
             END IF;
         END IF;
     END PROCESS;
-    -- Read data from RAM
 END rtl;
