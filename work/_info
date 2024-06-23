@@ -1,0 +1,371 @@
+m255
+K4
+z2
+!s11e vcom 2020.4 2020.10, Oct 13 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dG:/modeltech64_2020.4/examples
+Econtroller
+Z0 w1719085984
+Z1 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z3 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 82
+Z6 dG:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design
+Z7 8G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/Controller.vhd
+Z8 FG:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/Controller.vhd
+l0
+L6 1
+VcmEPO918fzjEET78e]f0d1
+!s100 3=el@WLVMFGi:oZKL4Ek]3
+Z9 OL;C;2020.4;71
+32
+Z10 !s110 1719149687
+!i10b 1
+Z11 !s108 1719149687.000000
+Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/Controller.vhd|
+Z13 !s107 G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/Controller.vhd|
+!i113 0
+Z14 o-work work -2002 -explicit
+Z15 tExplicit 1 CvgOpt 0
+Artl
+R1
+R2
+R3
+R4
+R5
+DEx4 work 10 controller 0 22 cmEPO918fzjEET78e]f0d1
+!i122 82
+l24
+L21 67
+VIU4MF2LU<>QL57:Olh@=>0
+!s100 k=jZHZ@V4nkmEBP8B99501
+R9
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 0
+R14
+R15
+Ecounter_n
+Z16 w1719138712
+R1
+R2
+R4
+R5
+!i122 83
+R6
+Z17 8G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/counter_n.vhd
+Z18 FG:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/counter_n.vhd
+l0
+L5 1
+V9Hi3lOW_ML05`8BQ>M8Kn1
+!s100 7HaU]XYU]:_6:TeQRMLLj0
+R9
+32
+Z19 !s110 1719149688
+!i10b 1
+R11
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/counter_n.vhd|
+Z21 !s107 G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/counter_n.vhd|
+!i113 0
+R14
+R15
+Artl
+R1
+R2
+R4
+R5
+DEx4 work 9 counter_n 0 22 9Hi3lOW_ML05`8BQ>M8Kn1
+!i122 83
+l21
+L18 19
+VD4J0z1fU1LA=DfRLH0I2f1
+!s100 =dEB5Ye9cicf:^?J_^S^Y2
+R9
+32
+R19
+!i10b 1
+R11
+R20
+R21
+!i113 0
+R14
+R15
+Edatapath
+Z22 w1719148706
+Z23 DPx4 work 9 matrixlib 0 22 bH=SooljdZlXiOMIVS@fF1
+R1
+R2
+R3
+R4
+R5
+!i122 84
+R6
+Z24 8G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/datapath.vhd
+Z25 FG:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/datapath.vhd
+l0
+L7 1
+VkUWg9hhim]_ClE19djYFn0
+!s100 3Y^RE86gVR]]SHZLKaa?L1
+R9
+32
+R19
+!i10b 1
+Z26 !s108 1719149688.000000
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/datapath.vhd|
+Z28 !s107 G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/datapath.vhd|
+!i113 0
+R14
+R15
+Artl
+R23
+R1
+R2
+R3
+R4
+R5
+DEx4 work 8 datapath 0 22 kUWg9hhim]_ClE19djYFn0
+!i122 84
+l36
+L27 135
+VE0Q70MGi<bBU;[IT2dA>a3
+!s100 JP`cI_]ne^W:[<R>LT[2I1
+R9
+32
+R19
+!i10b 1
+R26
+R27
+R28
+!i113 0
+R14
+R15
+Edff
+Z29 w1719148705
+R4
+R5
+!i122 85
+R6
+Z30 8G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/dff.vhd
+Z31 FG:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/dff.vhd
+l0
+L4 1
+VdE5b>zA>83F_G>]iIfQ^F1
+!s100 i8aaf:?z=ML93mEnLXm911
+R9
+32
+R19
+!i10b 1
+R26
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/dff.vhd|
+Z33 !s107 G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/dff.vhd|
+!i113 0
+R14
+R15
+Artl
+R4
+R5
+DEx4 work 3 dff 0 22 dE5b>zA>83F_G>]iIfQ^F1
+!i122 85
+l15
+L14 13
+VMJ2Ee0V5^AR3RAUE>D?iU2
+!s100 jn8D44@3Q3a[cT6JPKD=12
+R9
+32
+R19
+!i10b 1
+R26
+R32
+R33
+!i113 0
+R14
+R15
+Edpmem
+Z34 w1719148704
+R1
+R2
+R3
+R4
+R5
+!i122 86
+R6
+Z35 8G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/dpmem.vhd
+Z36 FG:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/dpmem.vhd
+l0
+L6 1
+Vm=glY:BV]G087OZnMgVGk0
+!s100 4S4k@eEOOZccZXK6zid;k3
+R9
+32
+R19
+!i10b 1
+R26
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/dpmem.vhd|
+Z38 !s107 G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/dpmem.vhd|
+!i113 0
+R14
+R15
+Artl
+R1
+R2
+R3
+R4
+R5
+DEx4 work 5 dpmem 0 22 m=glY:BV]G087OZnMgVGk0
+!i122 86
+l26
+L20 27
+VYUY79c:m?lbj4]06`oYG:2
+!s100 oanDY[1>Pgc5[PY=gcPA[1
+R9
+32
+R19
+!i10b 1
+R26
+R37
+R38
+!i113 0
+R14
+R15
+Ematrix
+Z39 w1719141607
+R23
+R1
+R2
+R3
+R4
+R5
+!i122 87
+R6
+Z40 8G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/Matrix.vhd
+Z41 FG:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/Matrix.vhd
+l0
+L7 1
+Voa_40d5Lm5=MU9<Jj>l::1
+!s100 h;G]d]ZCPSWXUJMJ]n^a<3
+R9
+32
+R19
+!i10b 1
+R26
+Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/Matrix.vhd|
+Z43 !s107 G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/Matrix.vhd|
+!i113 0
+R14
+R15
+Artl
+R23
+R1
+R2
+R3
+R4
+R5
+DEx4 work 6 matrix 0 22 oa_40d5Lm5=MU9<Jj>l::1
+!i122 87
+l28
+L22 39
+V=2KQKBS>kNc6F_1ZlR3@H1
+!s100 g=<N_KJRdMTdFK@Aeo7Da1
+R9
+32
+R19
+!i10b 1
+R26
+R42
+R43
+!i113 0
+R14
+R15
+Ematrix_tb
+Z44 w1719086211
+R23
+R1
+R2
+R3
+R4
+R5
+!i122 88
+R6
+Z45 8G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/Matrix_tb.vhd
+Z46 FG:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/Matrix_tb.vhd
+l0
+L7 1
+V8Ik@UXbmYmTE^>EAiVDYC0
+!s100 baQ481ieKQC0CU^Gl9chZ0
+R9
+32
+R19
+!i10b 1
+R26
+Z47 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/Matrix_tb.vhd|
+Z48 !s107 G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/Matrix_tb.vhd|
+!i113 0
+R14
+R15
+Artl
+R23
+R1
+R2
+R3
+R4
+R5
+DEx4 work 9 matrix_tb 0 22 8Ik@UXbmYmTE^>EAiVDYC0
+!i122 88
+l19
+L11 294
+VT;WjcPQ5S;kE<adfj5eko2
+!s100 ?5Q:Mbj<P6T:_`5gA?AAI2
+R9
+32
+R19
+!i10b 1
+R26
+R47
+R48
+!i113 0
+R14
+R15
+TMatrix_tb_opt
+!s110 1719149724
+Vm3n[fi;5;z<noz:K^ag;V0
+04 9 3 work matrix_tb rtl 1
+o+acc
+tCvgOpt 0
+n@matrix_tb_opt
+OL;O;2020.4;71
+Pmatrixlib
+R1
+R2
+R3
+R4
+R5
+!i122 89
+w1719148708
+R6
+8G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/matrixlib.vhd
+FG:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/matrixlib.vhd
+l0
+L6 1
+VbH=SooljdZlXiOMIVS@fF1
+!s100 C5:FTgoFViH<b55Z18Mbm0
+R9
+32
+R19
+!i10b 1
+R26
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/matrixlib.vhd|
+!s107 G:/DungBi/Modelsim/New folder/Nhom_18_SAD_digital_design/matrixlib.vhd|
+!i113 0
+R14
+R15

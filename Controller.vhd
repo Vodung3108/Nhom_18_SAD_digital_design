@@ -82,6 +82,6 @@ BEGIN
                     END IF;
             END CASE;
         END IF;
-    END PROCESS; -- 
+    END PROCESS; 
 
 END ARCHITECTURE rtl;
