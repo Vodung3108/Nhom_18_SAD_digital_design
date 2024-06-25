@@ -288,6 +288,8 @@ BEGIN
         start <= '0';
         WAIT FOR 2500 ns;
         start <= '1';
+        WAIT FOR 2000 ns;
+        start <= '0';
         WAIT;
     END PROCESS; -- start_sig
 
